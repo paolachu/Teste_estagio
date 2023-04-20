@@ -1,0 +1,36 @@
+//Autor Paola Chu.
+//Algoritmo em C++ que executa um programa onde o usuário digitará um valor e mostrará na tela se foi encontrado o valor e em qual a posição está no vetor.
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+	
+	setlocale (LC_ALL, "Portuguese");
+	
+    int vet[] = {9, 7, 2, 16, 14};
+    int n;
+
+    cout << "Digite um valor para pesquisar: ";
+    cin >> n;
+
+    int posicao = -1;
+
+    for(int i = 0; i < 5; i++) {
+        if(vet[i] == n) {
+            posicao = i+1;
+            break;
+        }
+    }
+
+    if(posicao != -1) {
+        cout << "O valor foi encontrado na posição: " << posicao << "." << endl;
+    } else {
+        cout << "O valor não foi encontrado em nenhuma das posições." << endl;
+    }
+    
+    
+return 0;
+}
