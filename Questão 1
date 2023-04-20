@@ -1,0 +1,38 @@
+//Autor Paola Chu
+//Algoritmo em C++ que executa um programa onde o usuário armazena duas listas em vetores e depois mostra na tela alternadas.
+
+#include <iostream>
+#include <locale.h>
+
+
+using namespace std;
+
+int main() {
+	
+	setlocale (LC_ALL, "Portuguese");
+    
+    int lista1[30], lista2[30], resultado[60], i, j;
+ 
+   for ( i = 0; i < 30; i ++) {
+        cout << "Digite o valor numérico " << i+1 << " da lista 1: " << endl;
+        cin >> lista1[i];
+        
+        cout << "Digite o valor numérico " << i+1 << " da lista 2: " << endl;
+        cin >> lista2[i];
+    }
+
+    for ( i = 0, j = 0; i < 30; i++, j+=2) {
+        resultado[j] = lista1[i];
+        resultado[j+1] = lista2[i];
+    }
+
+    
+    cout << "O resultado da lista 1 e da lista 2 intercaladas é: " << endl;
+    for (int i = 0; i < 60; i++) {
+        cout << resultado[i] << " ";
+	}
+	
+    
+
+    return 0;
+}
