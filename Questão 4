@@ -1,0 +1,48 @@
+//Autor Paola Chu.
+//Algoritmo em C++ que executa um programa onde o usuário digitará 17 números e mostrará na tela esses números ordenados de "frente para trás" e "trás para frente". 
+
+#include <iostream>
+#include <locale.h>
+
+using namespace std;
+
+int main() {
+	
+	setlocale (LC_ALL, "Portuguese");
+	
+    int tamanho = 17;
+    int lista[tamanho];
+    int i, j, temp;
+    
+
+    cout << "Digite 17 números:" << endl;
+    for ( i = 0; i < tamanho; i++) {
+        cin >> lista[i];
+    }
+    
+    for ( i = 0; i < tamanho-1; i++) {
+        for ( j = 0; j < tamanho-i-1; j++) {
+            if (lista[j] > lista[j+1]) {
+                temp = lista[j];
+                lista[j] = lista[j+1];
+                lista[j+1] = temp;
+            }
+        }
+    }
+    
+
+    cout << "Lista ordenada de frente para trás:" << endl;
+    for ( i = 0; i < tamanho; i++) {
+        cout << lista[i] << " ";
+    }
+    cout << endl;
+    
+
+    cout << "Lista ordenada de trás para frente:" << endl;
+    for ( i = tamanho-1; i >= 0; i--) {
+        cout << lista[i] << " ";
+    }
+    cout << endl;
+    
+    return 0;
+}
