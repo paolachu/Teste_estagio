@@ -1,0 +1,28 @@
+//Autor Paola Chu.
+//Algoritmo em C++ que executa um programa para calcular a área total de uma pirâmide quadrada.
+
+#include <iostream>
+#include <locale.h>
+#include <cmath>
+
+using namespace std;
+
+int main() {
+	
+	setlocale (LC_ALL, "Portuguese");
+	
+    double altura, areaBase, area_lateral, lado, areaTotal;
+    double arestaBase = 29;
+    
+    cout << "Digite a altura da pirâmide: ";
+    cin >> altura;
+      
+    lado = arestaBase;
+    areaBase = (lado * lado) * (sqrt(3) / 4);
+    area_lateral = 3 * (lado * altura) / 2;
+    areaTotal = areaBase + area_lateral;
+    
+    cout << "A área total das 4 faces laterais, cuja a aresta da base mede 29cm é: " << areaTotal << "cm²." << endl;
+    
+    return 0;
+}
